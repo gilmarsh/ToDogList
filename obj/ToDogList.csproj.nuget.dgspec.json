@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Documents\\LC101\\ToDogList\\ToDogList\\ToDogList.csproj": {}
+    "C:\\Documents\\LC101\\ToDogList\\ToDogList.csproj": {}
   },
   "projects": {
-    "C:\\Documents\\LC101\\ToDogList\\ToDogList\\ToDogList.csproj": {
+    "C:\\Documents\\LC101\\ToDogList\\ToDogList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Documents\\LC101\\ToDogList\\ToDogList\\ToDogList.csproj",
+        "projectUniqueName": "C:\\Documents\\LC101\\ToDogList\\ToDogList.csproj",
         "projectName": "ToDogList",
-        "projectPath": "C:\\Documents\\LC101\\ToDogList\\ToDogList\\ToDogList.csproj",
+        "projectPath": "C:\\Documents\\LC101\\ToDogList\\ToDogList.csproj",
         "packagesPath": "D:\\Users\\marsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Documents\\LC101\\ToDogList\\ToDogList\\obj\\",
+        "outputPath": "C:\\Documents\\LC101\\ToDogList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "D:\\Users\\marsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,6 +50,12 @@
               "target": "Package",
               "version": "[3.1.9, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.9, )"
@@ -57,6 +63,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.2.4, )"
             }
           },
           "imports": [
