@@ -113,8 +113,6 @@ C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identi
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
-C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -123,9 +121,6 @@ C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCo
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -163,9 +158,6 @@ C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandar
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.csprojAssemblyReference.cache
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.AssemblyInfoInputs.cache
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.AssemblyInfo.cs
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.csproj.CoreCompileInputs.cache
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cs
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cache
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.RazorAssemblyInfo.cache
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.RazorAssemblyInfo.cs
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.TagHelpers.input.cache
@@ -189,3 +181,11 @@ C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\staticwebassets\ToDogList.S
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.dll
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.pdb
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.genruntimeconfig.cache
+C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.csproj.CoreCompileInputs.cache
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cs
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cache
