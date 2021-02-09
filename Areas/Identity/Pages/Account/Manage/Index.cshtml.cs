@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ToDogList.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ToDogList.Areas.Identity.Pages.Account.Manage
 {

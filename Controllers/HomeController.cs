@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ToDogList.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ToDogList.Controllers
 {
@@ -18,13 +19,17 @@ namespace ToDogList.Controllers
             _logger = logger;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
+        
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
+            
             return View();
         }
 
