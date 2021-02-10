@@ -1,8 +1,18 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">To-Dog List</h1>
-    <p>Please <a href="/Identity/Account/Register">create an account</a> or <a href="/Identity/Account/Login">log in</a> to continue.</p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>buttface</p>
+    }
+    else
+    {
+        <p>Please <a href="/Identity/Account/Register">create an account</a> or <a href="/Identity/Account/Login">log in</a> to continue.</p>
+    }
+
 </div>
