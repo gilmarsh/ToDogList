@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity;
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -8,7 +9,7 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <p>buttface</p>
+        <p>Welcome! Please click <a href="/app">here</a> to see your to-do list.</p>
     }
     else
     {
