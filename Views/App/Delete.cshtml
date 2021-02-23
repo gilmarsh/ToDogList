@@ -1,0 +1,16 @@
+﻿<h1>Delete Task</h1>
+
+<form method="post">
+    @foreach (var toDo in ViewBag.toDos)
+    {
+        <div class="form-group">
+            <label>
+                <span>@toDo.Name</span>
+                <input type="checkbox" name="toDoIds" value="@toDo.Id" class="form-control">
+            </label>
+        </div>
+    }
+
+    <input type="submit" value="Delete Selected Tasks" class="btn btn-danger">
+
+</form>

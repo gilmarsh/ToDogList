@@ -270,3 +270,5 @@ C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Index.cshtml.g.cs
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Add.cshtml.g.cs
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Delete.cshtml.g.cs

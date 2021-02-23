@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ToDogList.Data;
+using ToDogList.Models;
+using ToDogList.ViewModels;
+
+namespace ToDogList.Controllers
+{
+    public class AppController : Controller
+    {
+        private ApplicationDbContext context;
+
+        public AppController(ApplicationDbContext dbContext)
+        {
+            context = dbContext;
+        }
+
+        // GET: AppController
+        [HttpGet]
+        public ActionResult Index()
+        {
+            List<ToDoItem> toDos = context.ToDoItems.ToList();
+            return View(toDos);
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            AddToDoViewModel addToDoViewModel = new AddToDoViewModel();
+            return View(addToDoViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddToDoViewModel addToDoViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                ToDoItem newToDo = new ToDoItem(addToDoViewModel.Name);
+                context.ToDoItems.Add(newToDo);
+                context.SaveChanges();
+
+                return Redirect("/App");
+            }
+            return View(addToDoViewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Delete()
+        {
+            //make a viewmodel if time
+            ViewBag.toDos = context.ToDoItems.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] toDoIds)
+        {
+            foreach (int toDoId in toDoIds)
+            {
+                ToDoItem theToDo = context.ToDoItems.Find(toDoId);
+                context.ToDoItems.Remove(theToDo);
+            }
+
+            context.SaveChanges();
+
+            return Redirect("/App");
+        }
+    }
+}
