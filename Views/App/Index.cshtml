@@ -1,4 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity;
+@using ToDogList.Areas.Identity.Data;
+@inject SignInManager<ToDogListUser> SignInManager;
+@inject UserManager<ToDogListUser> UserManager;
 @using ToDogList.Models;
 @model List<ToDoItem>;
 
@@ -17,12 +20,15 @@
         {
             <p>No tasks!</p>
         }
-        <ul>
-            @foreach (ToDoItem toDo in Model)
+    <ul>
+        @foreach (ToDoItem toDo in Model)
+        {
+            if (toDo.UserId == UserManager.GetUserAsync(User).Result.Id)
             {
                 <li>@toDo.Name</li>
             }
-        </ul>
+        }
+    </ul>
     </div>
     <div class="col-md-6">
         <p>This is where changing dog pictures will go!</p>
