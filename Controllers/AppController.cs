@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ToDogList.Areas.Identity.Data;
 using ToDogList.Data;
 using ToDogList.Models;
 using ToDogList.ViewModels;
@@ -12,23 +15,34 @@ namespace ToDogList.Controllers
     public class AppController : Controller
     {
         private ApplicationDbContext context;
+        private UserManager<ToDogListUser> userManager;
 
-        public AppController(ApplicationDbContext dbContext)
+        public AppController(ApplicationDbContext dbContext, UserManager<ToDogListUser> manager)
         {
+            userManager = manager;
             context = dbContext;
         }
+
+        /*public ToDogListUser GetCurrentUser()
+        {
+            ClaimsPrincipal currentUser = User;
+            ToDogListUser user = userManager.GetUserAsync(User).Result;
+            return user;
+        }*/
 
         // GET: AppController
         [HttpGet]
         public ActionResult Index()
         {
             List<ToDoItem> toDos = context.ToDoItems.ToList();
+            
             return View(toDos);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
+            
             AddToDoViewModel addToDoViewModel = new AddToDoViewModel();
             return View(addToDoViewModel);
         }
@@ -38,7 +52,14 @@ namespace ToDogList.Controllers
         {
             if (ModelState.IsValid)
             {
-                ToDoItem newToDo = new ToDoItem(addToDoViewModel.Name);
+                ClaimsPrincipal currentUser = User;
+                ToDogListUser user = userManager.GetUserAsync(User).Result;
+                ToDoItem newToDo = new ToDoItem
+                {
+                    Name = addToDoViewModel.Name,
+                    UserId = user.Id
+                
+                };
                 context.ToDoItems.Add(newToDo);
                 context.SaveChanges();
 

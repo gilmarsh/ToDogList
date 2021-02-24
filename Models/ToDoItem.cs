@@ -11,8 +11,8 @@ namespace ToDogList.Models
         public string Name { get; set; }
         public int Id { get; set; }
         public bool Complete { get; set; }
-        //ToDogListUser User { get; set; }
-        //string UserId { get; set; }
+        public ToDogListUser User { get; set; }
+        public string UserId { get; set; }
 
 
 

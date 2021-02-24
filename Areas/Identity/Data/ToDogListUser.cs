@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using ToDogList.Models;
 
 namespace ToDogList.Areas.Identity.Data
 {
@@ -11,5 +12,7 @@ namespace ToDogList.Areas.Identity.Data
     {
         [PersonalData]
         public string Name { get; set; }
+
+        public List<ToDoItem> ToDoItems { get; set; }
     }
 }
