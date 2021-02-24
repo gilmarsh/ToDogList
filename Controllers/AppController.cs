@@ -23,13 +23,6 @@ namespace ToDogList.Controllers
             context = dbContext;
         }
 
-        /*public ToDogListUser GetCurrentUser()
-        {
-            ClaimsPrincipal currentUser = User;
-            ToDogListUser user = userManager.GetUserAsync(User).Result;
-            return user;
-        }*/
-
         // GET: AppController
         [HttpGet]
         public ActionResult Index()
@@ -72,7 +65,18 @@ namespace ToDogList.Controllers
         public IActionResult Delete()
         {
             //make a viewmodel if time
-            ViewBag.toDos = context.ToDoItems.ToList();
+            //ViewBag.toDos = context.ToDoItems.ToList();
+            List<ToDoItem> userItems = new List<ToDoItem>();
+            foreach (ToDoItem toDo in context.ToDoItems.ToList())
+            {
+                ClaimsPrincipal currentUser = User;
+                ToDogListUser user = userManager.GetUserAsync(User).Result;
+                if (toDo.UserId == user.Id)
+                {
+                    userItems.Add(toDo);
+                }    
+            }
+            ViewBag.toDos = userItems;
             return View();
         }
 
