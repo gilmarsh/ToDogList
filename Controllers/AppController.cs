@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ToDogList.Areas.Identity.Data;
+using ToDogList.Data;
+using ToDogList.Models;
+using ToDogList.ViewModel;
 
 namespace ToDogList.Controllers
 {
@@ -13,14 +16,47 @@ namespace ToDogList.Controllers
     public class AppController : Controller
     {
         private UserManager<ToDogListUser> userManager;
+        private ApplicationDbContext context;
 
-        public AppController(UserManager<ToDogListUser> usrMgr)
+        public AppController(UserManager<ToDogListUser> usrMgr, ApplicationDbContext dbContext)
         {
             userManager = usrMgr;
+            context = dbContext;
         }
+
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            List<ToDoItem> userItems = new List<ToDoItem>();
+            foreach (ToDoItem item in context.ToDoItems.ToList())
+            {
+                if (item.UserId.Equals(userManager.GetUserAsync(User).Result.Id))
+                {
+                    userItems.Add(item);
+                }
+            }
+
+            return View(userItems);
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            AddToDoViewModel addToDoViewModel = new AddToDoViewModel();
+            return View(addToDoViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddToDoViewModel addToDoViewModel)
+        {
+            ToDoItem newItem = new ToDoItem
+            {
+                Name = addToDoViewModel.Name,
+                UserId = userManager.GetUserAsync(User).Result.Id
+            };
+            context.Add(newItem);
+            context.SaveChanges();
+            return Redirect("/App");
         }
     }
 }

@@ -1,10 +1,28 @@
-﻿
+﻿@using ToDogList.Models;
+@using Microsoft.AspNetCore.Identity
+@using ToDogList.Areas.Identity.Data;
+
+@model List<ToDoItem>
+@inject UserManager<ToDogListUser> UserManager;
 
 <div class="row">
 
     <div class="col-md-6">
         <h1>Tasks</h1>
-        <p>this is where the tasks will go</p>
+        <a asp-controller="App" asp-action="Add" class="btn-block">Add Event</a>
+        @if (Model.Count == 0)
+        {
+            <p>Your list is empty!</p>
+        }
+        @foreach (ToDoItem item in Model)
+        {
+            if (UserManager.GetUserAsync(User).Result.Id.Equals(item.UserId))
+            {
+                <ul>
+                    <li>@item.Name</li>
+                </ul>
+            }
+        }
     </div>
 
     <div class="col-md-6">
