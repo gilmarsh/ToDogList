@@ -63,5 +63,31 @@ namespace ToDogList.Controllers
             }
             return View(addToDoViewModel);
         }
+
+        [HttpGet]
+        public IActionResult Delete()
+        {
+            List<ToDoItem> userItems = new List<ToDoItem>();
+            foreach (ToDoItem item in context.ToDoItems.ToList())
+            {
+                if (item.UserId.Equals(userManager.GetUserAsync(User).Result.Id))
+                {
+                    userItems.Add(item);
+                }
+            }
+            return View(userItems);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int[] itemIds)
+        {
+            foreach (int itemId in itemIds)
+            {
+                context.Remove(context.ToDoItems.Find(itemId));
+            }
+            context.SaveChanges();
+
+            return Redirect("/App");
+        }
     }
 }
