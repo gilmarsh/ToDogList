@@ -49,14 +49,19 @@ namespace ToDogList.Controllers
         [HttpPost]
         public IActionResult Add(AddToDoViewModel addToDoViewModel)
         {
-            ToDoItem newItem = new ToDoItem
+            if (ModelState.IsValid)
             {
-                Name = addToDoViewModel.Name,
-                UserId = userManager.GetUserAsync(User).Result.Id
-            };
-            context.Add(newItem);
-            context.SaveChanges();
-            return Redirect("/App");
+                ToDoItem newItem = new ToDoItem
+                {
+                    Name = addToDoViewModel.Name,
+                    UserId = userManager.GetUserAsync(User).Result.Id
+                };
+                context.Add(newItem);
+                context.SaveChanges();
+
+                return Redirect("/App");
+            }
+            return View(addToDoViewModel);
         }
     }
 }
