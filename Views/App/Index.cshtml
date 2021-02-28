@@ -19,12 +19,12 @@
             @if (item.Complete == false)
             {
                 <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" />
-                <label class="form-check-label" for="itemIds">@item.Name - @item.Complete</label>
+                <label class="form-check-label" for="itemIds">@item.Name</label>
             }
             @if (item.Complete == true)
             {
                 <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" disabled />
-                <label class="form-check-label" for="itemIds"><del>@item.Name - @item.Complete</del></label>
+                <label class="form-check-label" for="itemIds"><del>@item.Name</del></label>
             }
         </div>
         }
