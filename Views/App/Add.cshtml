@@ -1,0 +1,10 @@
+﻿@using ToDogList.ViewModel
+@model AddToDoViewModel
+
+<h1>Add Task</h1>
+
+<form asp-controller="app" asp-action="add" method="post">
+    <input asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span> <br />
+    <input type="submit" value="Add Task" />
+</form>

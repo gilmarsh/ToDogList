@@ -1,0 +1,38 @@
+﻿@using ToDogList.Models;
+
+@model List<ToDoItem>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h1>Tasks</h1>
+        <a asp-controller="App" asp-action="Add" class="btn btn-primary">Add</a>
+        <a asp-controller="App" asp-action="Delete" class="btn btn-danger">Delete</a>
+        @if (Model.Count == 0)
+        {
+            <p>Your list is empty!</p>
+        }
+    <form method="post">
+        @foreach (ToDoItem item in Model)
+        {
+        <div class="form-check">
+            @if (item.Complete == false)
+            {
+                <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" />
+                <label class="form-check-label" for="itemIds">@item.Name</label>
+            }
+            @if (item.Complete == true)
+            {
+                <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" disabled />
+                <label class="form-check-label" for="itemIds"><del>@item.Name</del></label>
+            }
+        </div>
+        }
+        <input type="submit" value="Done!" class="btn btn-success" />
+    </form>
+    </div>
+
+    <div class="col-md-6">
+        <p>this is where the pictures will go</p>
+    </div>
+</div>
