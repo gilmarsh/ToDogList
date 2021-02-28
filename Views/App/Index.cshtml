@@ -12,12 +12,24 @@
         {
             <p>Your list is empty!</p>
         }
+    <form method="post">
         @foreach (ToDoItem item in Model)
         {
-            <ul>
-                <li>@item.Name</li>
-            </ul>
+        <div class="form-check">
+            @if (item.Complete == false)
+            {
+                <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" />
+                <label class="form-check-label" for="itemIds">@item.Name - @item.Complete</label>
+            }
+            @if (item.Complete == true)
+            {
+                <input type="checkbox" name="itemIds" value="@item.Id" class="form-check-input" disabled />
+                <label class="form-check-label" for="itemIds"><del>@item.Name - @item.Complete</del></label>
+            }
+        </div>
         }
+        <input type="submit" value="Done!" class="btn btn-success" />
+    </form>
     </div>
 
     <div class="col-md-6">

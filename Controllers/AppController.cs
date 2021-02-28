@@ -39,6 +39,20 @@ namespace ToDogList.Controllers
             return View(userItems);
         }
 
+        [HttpPost]
+        [Route("/App")]
+        public IActionResult CompleteItems(int[] itemIds)
+        {
+            foreach (int itemId in itemIds)
+            {
+                ToDoItem item = context.ToDoItems.Find(itemId);
+                item.Complete = true;
+            }
+            context.SaveChanges();
+
+            return Redirect("/App");
+        }
+
         [HttpGet]
         public IActionResult Add()
         {
