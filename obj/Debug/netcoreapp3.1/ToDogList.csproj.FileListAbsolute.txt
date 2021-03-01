@@ -186,9 +186,6 @@ C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.csproj.CoreCompileInputs.cache
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cs
-C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cache
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Documents\LC101\ToDogList\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -271,3 +268,6 @@ C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Index.cshtml.g.cs
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Add.cshtml.g.cs
 C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\Razor\Views\App\Delete.cshtml.g.cs
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.csproj.CoreCompileInputs.cache
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cs
+C:\Documents\LC101\ToDogList\obj\Debug\netcoreapp3.1\ToDogList.MvcApplicationPartsAssemblyInfo.cache

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YLP1GV9K7HdBdCBiBvQyurVESIdprTKKQmHzEINwBhWLRRyZYqMZoJQIWOCyoLLu/VwelZN9s98KTUVoDV/vQA==",
+  "dgSpecHash": "Pc/mM/gBKsxgszDL2h3H7Em1Hrq1BxI7mgjjNbczSYUS8PaZur6JXTdSpbHb0fTvLd2L/guJ0wIm4P3PQOM26g==",
   "success": true,
   "projectFilePath": "C:\\Documents\\LC101\\ToDogList\\ToDogList.csproj",
   "expectedPackageFiles": [
@@ -65,7 +65,7 @@
     "D:\\Users\\marsh\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "D:\\Users\\marsh\\.nuget\\packages\\mysqlconnector\\0.69.9\\mysqlconnector.0.69.9.nupkg.sha512",
     "D:\\Users\\marsh\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "D:\\Users\\marsh\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "D:\\Users\\marsh\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "D:\\Users\\marsh\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "D:\\Users\\marsh\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.2.4\\pomelo.entityframeworkcore.mysql.3.2.4.nupkg.sha512",
     "D:\\Users\\marsh\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",

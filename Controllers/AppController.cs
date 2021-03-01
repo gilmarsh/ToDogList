@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ToDogList.Areas.Identity.Data;
 using ToDogList.Data;
 using ToDogList.Models;
@@ -17,6 +20,7 @@ namespace ToDogList.Controllers
     {
         private UserManager<ToDogListUser> userManager;
         private ApplicationDbContext context;
+        private static int completedTasks;
 
         public AppController(UserManager<ToDogListUser> usrMgr, ApplicationDbContext dbContext)
         {
@@ -25,7 +29,7 @@ namespace ToDogList.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             List<ToDoItem> userItems = new List<ToDoItem>();
             foreach (ToDoItem item in context.ToDoItems.ToList())
@@ -35,6 +39,24 @@ namespace ToDogList.Controllers
                     userItems.Add(item);
                 }
             }
+
+            List<DogPicture> pictures = new List<DogPicture>();
+            using (var httpClient = new HttpClient())
+            {
+                for (int i = 0; i < completedTasks; i++)
+                {
+                    using (var response = await httpClient.GetAsync("https://dog.ceo/api/breeds/image/random"))
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        DogPicture picture = JsonConvert.DeserializeObject<DogPicture>(apiResponse);
+                        pictures.Add(picture);
+                    }
+                }
+            }
+
+            ViewBag.pictures = pictures;
+            ViewBag.completed = completedTasks;
+            completedTasks = 0;
 
             return View(userItems);
         }
@@ -47,6 +69,7 @@ namespace ToDogList.Controllers
             {
                 ToDoItem item = context.ToDoItems.Find(itemId);
                 item.Complete = true;
+                completedTasks += 1;
             }
             context.SaveChanges();
 

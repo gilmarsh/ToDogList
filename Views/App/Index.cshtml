@@ -33,6 +33,18 @@
     </div>
 
     <div class="col-md-6">
-        <p>this is where the pictures will go</p>
+        @if (ViewBag.completed == 0)
+        {
+            <p>Finish items on your list to get cute dog pictures!</p><br />
+            <p>You can do it!</p>
+        }
+        else
+        {
+            @for (int i = 0; i < ViewBag.completed; i++)
+            {
+                <img src="@ViewBag.pictures[i].Message" />
+                <br />
+            }
+        }
     </div>
 </div>
