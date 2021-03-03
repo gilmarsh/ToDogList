@@ -35,15 +35,14 @@
     <div class="col-md-6">
         @if (ViewBag.completed == 0)
         {
-            <p>Finish items on your list to get cute dog pictures!</p><br />
+            <p>Finish items on your list to get cute dog pictures!</p>
             <p>You can do it!</p>
         }
         else
         {
             @for (int i = 0; i < ViewBag.completed; i++)
             {
-                <img src="@ViewBag.pictures[i].Message" />
-                <br />
+                <p><img src="@ViewBag.pictures[i].Message" /></p>
             }
         }
     </div>
